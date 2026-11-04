@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+h1 {
+    color: #243b55;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+textarea:focus {
+    border-color: #243b55;
+    box-shadow: 0 0 8px rgba(36, 59, 85, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #243b55;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #141e30;
+    transform: translateY(-2px);
+}
+
+.result {
+    margin-top: 25px;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.spam {
+    background: #ffe3e3;
+    color: #d00000;
+    border: 1px solid #ffbaba;
+}
+
+.not-spam {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #a7f3d0;
+}
+
+footer {
+    margin-top: 30px;
+    color: #999;
+    font-size: 12px;
+}
+
+/* Mobile responsive design */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    textarea {
+        height: 130px;
+    }
+}

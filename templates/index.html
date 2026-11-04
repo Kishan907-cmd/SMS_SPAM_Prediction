@@ -1,0 +1,151 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Message Detector</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #243b55;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            resize: none;
+            outline: none;
+            margin-bottom: 20px;
+        }
+
+        textarea:focus {
+            border-color: #243b55;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #243b55;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #141e30;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .spam {
+            background: #ffe0e0;
+            color: #d00000;
+        }
+
+        .not-spam {
+            background: #d9fbe5;
+            color: #087a35;
+        }
+
+        footer {
+            margin-top: 25px;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Spam Message Detector</h1>
+
+        <p class="subtitle">
+            Detect whether your message is Spam or Not Spam using Machine Learning.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <textarea
+                name="message"
+                placeholder="Enter your message here..."
+                required></textarea>
+
+            <button type="submit">
+                Check Message
+            </button>
+
+        </form>
+
+        {% if prediction %}
+
+            <div class="result
+                {% if prediction == 'Spam Message' %}
+                    spam
+                {% else %}
+                    not-spam
+                {% endif %}">
+
+                {{ prediction }}
+
+            </div>
+
+        {% endif %}
+
+        <footer>
+            Powered by Python, Flask and Machine Learning
+        </footer>
+
+    </div>
+
+</body>
+</html>
+```
